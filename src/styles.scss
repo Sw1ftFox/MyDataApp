@@ -1,1 +1,126 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@font-face {
+  font-family: "SF UI Display";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Display"),
+    url("/fonts/SF UI Display/sf-ui-display-light-58646b33e0551.woff")
+      format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --header-background: #f2f5fa;
+  --font-dark: #434652;
+  --view-active: #f2f5fa;
+  --view-border: #c4c7d1;
+  --view-background: #ffffff;
+  --view-text: #434652;
+  --create-border: #21a5b9;
+  --create-background: #21a5b9;
+  --create-text: #ffffff;
+  --line-border: #d3d4db;
+  --description-color:#757986;
+  --font-family: "Roboto", sans-serif;
+  --second-family: "SF UI Display", sans-serif;
+}
+
+
+//App component
+.header {
+  background: var(--header-background);
+  height: 18vh;
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--font-dark);
+
+    padding: 40px 0 44px 60px;
+  }
+}
+
+.main {
+  margin: 36px 60px 16px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__list,
+  &__tile {
+    cursor: pointer;
+    border: 1px solid var(--view-border);
+    padding: 0px 12px;
+    height: 36px;
+    background: var(--view-background);
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 277%;
+    color: var(--view-text);
+
+    transition: 200ms;
+  }
+
+  &__list {
+    border-radius: 2px 0 0 2px;
+    width: 69px;
+  }
+
+  &__tile {
+    border-radius: 0 2px 2px 0;
+    width: 67px;
+  }
+
+  &__list--active,
+  &__tile--active {
+    background: var(--view-active);
+  }
+
+  &__list:hover,
+  &__tile:hover {
+    background: var(--view-active);
+  }
+
+  &__list:active,
+  &__tile:active {
+    transform: scale(0.95);
+  }
+
+  &__create {
+    margin-left: auto;
+
+    cursor: pointer;
+
+    border: 1px solid var(--create-border);
+    border-radius: 4px;
+    padding: 0px 20px;
+    width: 96px;
+    height: 36px;
+    background: var(--create-background);
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 257%;
+    color: var(--create-text);
+
+    transition: 200ms;
+  }
+
+  &__create:hover {
+    color: var(--create-background);
+    background: var(--create-text);
+  }
+
+  &__create:active {
+    transform: scale(0.95);
+  }
+}

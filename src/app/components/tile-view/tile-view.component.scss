@@ -1,0 +1,53 @@
+.tile {
+  margin: 0 60px 20px 60px;
+
+  &__content {
+    background: var(--header-background);
+    background-image: url(https://screenshots.enkod.tech/ilya_novikovG6KIVEp3v160xCMY.png);
+    border-radius: 8px;
+    width: 320px;
+    height: 300px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+  }
+
+  &__text {
+    margin: 16.5px 20px 32px 20px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &__name {
+    margin-right: 11.06px;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--font-dark);
+  }
+
+  &__favorite {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+  }
+
+  &__favorite-path {
+    fill: var(--description-color);
+  }
+
+  &__description {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--description-color);
+  }
+}

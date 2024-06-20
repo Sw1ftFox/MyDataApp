@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrl: './list-view.component.scss'
 })
 export class ListViewComponent {
-
 }
