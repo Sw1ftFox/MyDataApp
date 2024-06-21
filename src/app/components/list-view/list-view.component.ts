@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CITIES } from '../../cities';
 
 @Component({
   selector: 'app-list-view',
@@ -8,4 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './list-view.component.scss'
 })
 export class ListViewComponent {
+  cities = CITIES;
 }
+
+

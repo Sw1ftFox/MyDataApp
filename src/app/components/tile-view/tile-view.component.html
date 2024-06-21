@@ -1,9 +1,10 @@
 <div class="tile">
+  @for (city of cities; track $index) {
   <div class="tile__content">
-    <!-- <img src="https://screenshots.enkod.tech/ilya_novikovG6KIVEp3v160xCMY.png" class="tile__image" alt="city image"> -->
+    <img src="{{city.image}}" class="tile__image" alt="city image">
     <div class="tile__text">
       <div class="tile__title">
-        <div class="tile__name">Москва</div>
+        <div class="tile__name">{{city.name}}</div>
         <svg class="tile__favorite" width="14" height="14" viewBox="0 0 14 14" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path class="tile__favorite-path"
@@ -11,7 +12,8 @@
             fill="black" />
         </svg>
       </div>
-      <div class="tile__description">Столица России, город федерального значения</div>
+      <div class="tile__description">{{city.description}}</div>
     </div>
   </div>
+  }
 </div>

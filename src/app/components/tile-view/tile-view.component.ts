@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CITIES } from '../../cities';
 
 @Component({
   selector: 'app-tile-view',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './tile-view.component.scss'
 })
 export class TileViewComponent {
-
+  cities = CITIES;
 }

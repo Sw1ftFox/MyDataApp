@@ -7,3 +7,4 @@ export const routes: Routes = [
   { path: 'list', component: ListViewComponent },
   { path: '', redirectTo: '/tiles', pathMatch: 'full' }
 ];
+
