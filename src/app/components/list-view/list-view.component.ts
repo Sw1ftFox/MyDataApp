@@ -10,7 +10,7 @@ import { NgIf } from '@angular/common';
   styleUrl: './list-view.component.scss'
 })
 export class ListViewComponent {
-  cities = CITIES;
+  cities = this.loadCities();
 
   ngOnInit(): void {
     this.cities = this.loadCities();

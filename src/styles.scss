@@ -12,6 +12,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -26,13 +27,11 @@
   --create-background: #21a5b9;
   --create-text: #ffffff;
   --line-border: #d3d4db;
-  --description-color:#757986;
+  --description-color: #757986;
   --font-family: "Roboto", sans-serif;
   --second-family: "SF UI Display", sans-serif;
 }
 
-
-//App component
 .header {
   background: var(--header-background);
   height: 18vh;
@@ -49,8 +48,14 @@
 
 .main {
   margin: 36px 60px 16px 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 
   &__list,
@@ -65,6 +70,10 @@
     font-size: 13px;
     line-height: 277%;
     color: var(--view-text);
+
+    -webkit-transition: 200ms;
+
+    -o-transition: 200ms;
 
     transition: 200ms;
   }
@@ -91,6 +100,8 @@
 
   &__list:active,
   &__tile:active {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
     transform: scale(0.95);
   }
 
@@ -98,6 +109,7 @@
     margin-left: auto;
 
     cursor: pointer;
+    text-decoration: none;
 
     border: 1px solid var(--create-border);
     border-radius: 4px;
@@ -112,6 +124,10 @@
     line-height: 257%;
     color: var(--create-text);
 
+    -webkit-transition: 200ms;
+
+    -o-transition: 200ms;
+
     transition: 200ms;
   }
 
@@ -121,6 +137,8 @@
   }
 
   &__create:active {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
     transform: scale(0.95);
   }
 }

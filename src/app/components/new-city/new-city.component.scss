@@ -1,0 +1,126 @@
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+
+  &__returnbtn {
+    border: 1px solid var(--view-border);
+    border-radius: 2px;
+    padding: 0px 16px 0px 12px;
+    width: 97px;
+    height: 36px;
+    background: var(--create-text);
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    margin-bottom: 28px;
+  }
+
+  &__arrow {
+    margin-right: 10px;
+  }
+
+  &__back {
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 257%;
+    color: var(--view-text);
+
+    text-decoration: none;
+  }
+
+  &__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--view-text);
+  }
+
+  &__name {
+    height: 36px;
+  }
+
+  &__name,
+  &__description,
+  &__image {
+    border: 1px solid var(--view-border);
+    border-radius: 2px;
+    width: 534px;
+
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    height: 80px;
+  }
+
+  &__image {
+    height: 36px;
+
+    margin-bottom: 40px;
+  }
+
+  &__submit {
+    cursor: pointer;
+
+    border: 1px solid var(--create-border);
+    border-radius: 2px;
+    padding: 0px 16px;
+    width: 88px;
+    height: 36px;
+    background: var(--create-background);
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 257%;
+    color: var(--create-text);
+
+    -webkit-transition: 200ms;
+
+    -o-transition: 200ms;
+
+    transition: 200ms;
+  }
+
+  &__submit:hover {
+    color: var(--create-background);
+    background: var(--create-text);
+  }
+
+  &__submit:active {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+}

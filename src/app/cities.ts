@@ -11,14 +11,14 @@ export const CITIES: City[] = [
     image: 'https://screenshots.enkod.tech/ilya_novikovG6KIVEp3v160xCMY.png',
     name: 'Москва',
     description: 'Столица России, город федерального значения',
-    favorite: true,
+    favorite: false,
   },
   {
     id: 2,
     image: 'https://screenshots.enkod.tech/ilya_novikovW7s6gLwAGDjaJbNL.png',
     name: 'Санкт-Петербург',
     description: 'Второй по численности населения город России',
-    favorite: true,
+    favorite: false,
   },
   {
     id: 3,
