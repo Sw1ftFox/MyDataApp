@@ -10,11 +10,7 @@ import { CITIES, City } from '../../cities';
   styleUrl: './tile-view.component.scss'
 })
 export class TileViewComponent {
-  cities = CITIES;
-
-  ngOnInit(): void {
-    this.cities = this.loadCities();
-  }
+  cities = this.loadCities();
 
   toggleFavorite(city: City): void {
     city.favorite = !city.favorite;
@@ -23,6 +19,7 @@ export class TileViewComponent {
 
   private loadCities(): City[] {
     const citiesFromStorage = localStorage.getItem('cities');
+
     if (citiesFromStorage) {
       return JSON.parse(citiesFromStorage);
     } else {

@@ -12,10 +12,6 @@ import { NgIf } from '@angular/common';
 export class ListViewComponent {
   cities = this.loadCities();
 
-  ngOnInit(): void {
-    this.cities = this.loadCities();
-  }
-
   toggleFavorite(city: City): void {
     city.favorite = !city.favorite;
     this.saveCities();

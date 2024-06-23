@@ -17,6 +17,7 @@
     width: 97px;
     height: 36px;
     background: var(--create-text);
+    text-decoration: none;
 
     display: -webkit-box;
 
@@ -32,20 +33,30 @@
     align-items: center;
 
     margin-bottom: 28px;
+
+    transition: 200ms;
+  }
+
+  &__returnbtn:hover {
+    background: var(--view-active);
+  }
+
+  &__returnbtn:active {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
   }
 
   &__arrow {
     margin-right: 10px;
   }
 
-  &__back {
+  &__inscription {
     font-family: var(--second-family);
     font-weight: 500;
     font-size: 14px;
     line-height: 257%;
     color: var(--view-text);
-
-    text-decoration: none;
   }
 
   &__form {

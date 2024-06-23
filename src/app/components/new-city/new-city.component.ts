@@ -16,12 +16,11 @@ export class NewCityComponent {
   description = new FormControl('');
   image = new FormControl('');
 
-  // cities = CITIES; 
-  cities: City[] = this.loadCities();
-  
+  cities = this.loadCities();
+
   onSubmit(): void {
     const newCity: City = {
-      id: this.cities.length,
+      id: this.cities.length + 1,
       name: this.name.value ?? '',
       description: this.description.value ?? '',
       image: this.image.value ?? '',
@@ -45,4 +44,3 @@ export class NewCityComponent {
     localStorage.setItem('cities', JSON.stringify(this.cities));
   }
 };
-
