@@ -1,0 +1,7 @@
+<main class="main">
+  <button class="main__list" (click)="changeViewType('list')"
+    [class.main__list--active]="viewType === 'list'">Список</button>
+  <button class="main__tile" (click)="changeViewType('tile')"
+    [class.main__tile--active]="viewType === 'tile'">Плитка</button>
+  <a routerLink="/new-city" class="main__create">Создать</a>
+</main>

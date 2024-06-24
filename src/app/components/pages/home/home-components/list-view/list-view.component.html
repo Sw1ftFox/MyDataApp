@@ -1,0 +1,15 @@
+@for (city of cities; track $index) {
+<div class="list">
+  <hr class="list__line">
+  <div class="list__content">
+    <img src="{{city.image}}" class="list__image" alt="{{city.name}} фото">
+    <div class="list__text">
+      <div class="list__title">
+        <div class="list__name">{{city.name}}</div>
+        <home-favorite-icon [city]="city" (saveCities)="saveCities()"></home-favorite-icon>
+      </div>
+      <div class="list__description">{{city.description}}</div>
+    </div>
+  </div>
+</div>
+}
