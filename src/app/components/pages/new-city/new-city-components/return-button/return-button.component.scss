@@ -1,0 +1,48 @@
+.returnbtn {
+  border: 1px solid var(--view-border);
+  border-radius: 2px;
+  padding: 0px 16px 0px 12px;
+  width: 97px;
+  height: 36px;
+  background: var(--create-text);
+  text-decoration: none;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  margin-bottom: 28px;
+
+  transition: 200ms;
+
+  &__arrow {
+    margin-right: 10px;
+  }
+
+  &__inscription {
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 257%;
+    color: var(--view-text);
+  }
+}
+
+.returnbtn:hover {
+  background: var(--view-active);
+}
+
+.returnbtn:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}

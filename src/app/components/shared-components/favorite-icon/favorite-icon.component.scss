@@ -1,0 +1,11 @@
+.list__favorite,
+.tile__favorite {
+  cursor: pointer;
+  min-width: 14px;
+  min-height: 14px;
+}
+
+.list__favorite-path,
+.tile__favorite-path {
+  fill: var(--description-color);
+}

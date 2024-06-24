@@ -58,16 +58,6 @@
     margin-right: 8px;
   }
 
-  &__favorite {
-    cursor: pointer;
-    width: 14px;
-    height: 14px;
-  }
-
-  &__favorite-path {
-    fill: var(--description-color);
-  }
-
   &__description {
     font-family: var(--font-family);
     font-weight: 400;

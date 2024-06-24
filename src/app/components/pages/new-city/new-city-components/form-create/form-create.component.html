@@ -1,0 +1,12 @@
+<form (submit)="onSubmit()" class="form">
+  <label for="name" class="form__label">Название города</label>
+  <input type="text" id="name" [formControl]="name" class="form__name">
+
+  <label for="description" class="form__label">Описание города</label>
+  <textarea type="text" id="description" [formControl]="description" class="form__description"></textarea>
+
+  <label for="image" class="form__label">Ссылка на картинку</label>
+  <input type="text" id="image" [formControl]="image" class="form__image">
+
+  <button type="submit" class="form__submit">Создать</button>
+</form>

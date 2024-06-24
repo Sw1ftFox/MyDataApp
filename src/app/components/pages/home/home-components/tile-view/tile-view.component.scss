@@ -77,8 +77,8 @@
 
   &__favorite {
     cursor: pointer;
-    width: 14px;
-    height: 14px;
+    min-width: 14px;
+    min-height: 14px;
   }
 
   &__favorite-path {

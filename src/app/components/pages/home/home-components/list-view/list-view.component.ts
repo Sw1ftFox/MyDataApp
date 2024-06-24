@@ -1,21 +1,16 @@
 import { Component } from '@angular/core';
-import { CITIES, City } from '../../cities';
-import { NgIf } from '@angular/common';
+import { CITIES, City } from '../../../../../cities';
+import { FavoriteIconComponent } from "../../../../shared-components/favorite-icon/favorite-icon.component";
 
 @Component({
-  selector: 'app-list-view',
+  selector: 'home-list-view',
   standalone: true,
-  imports: [NgIf],
   templateUrl: './list-view.component.html',
-  styleUrl: './list-view.component.scss'
+  styleUrl: './list-view.component.scss',
+  imports: [FavoriteIconComponent]
 })
 export class ListViewComponent {
   cities = this.loadCities();
-
-  toggleFavorite(city: City): void {
-    city.favorite = !city.favorite;
-    this.saveCities();
-  }
 
   private loadCities(): City[] {
     const citiesFromStorage = localStorage.getItem('cities');
@@ -26,7 +21,7 @@ export class ListViewComponent {
     }
   }
 
-  private saveCities(): void {
+  saveCities(): void {
     localStorage.setItem('cities', JSON.stringify(this.cities));
   }
 }
