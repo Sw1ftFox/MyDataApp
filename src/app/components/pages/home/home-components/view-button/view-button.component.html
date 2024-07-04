@@ -1,7 +1,13 @@
 <main class="main">
-  <button class="main__list" (click)="changeViewType('list')"
-    [class.main__list--active]="viewType === 'list'">Список</button>
-  <button class="main__tile" (click)="changeViewType('tile')"
-    [class.main__tile--active]="viewType === 'tile'">Плитка</button>
+  <button class="main__list" 
+    [routerLink]="[{ outlets: { view: ['list-view'] } }]" 
+    routerLinkActive="main__list--active"
+    [routerLinkActiveOptions]="{ exact: true }">Список</button>
+  <button class="main__tile" 
+    [routerLink]="[{ outlets: { view: ['tile-view'] } }]" 
+    routerLinkActive="main__tile--active"
+    [routerLinkActiveOptions]="{ exact: true }">Плитка</button>
   <a routerLink="/new-city" class="main__create">Создать</a>
 </main>
+
+<router-outlet name="view"></router-outlet>

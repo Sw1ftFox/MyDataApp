@@ -2,12 +2,4 @@
   <div class="header__title">Список городов</div>
 </header>
 
-<home-view-button [viewType]="viewType" (viewTypeChange)="onViewTypeChange($event)"></home-view-button>
-
-<div *ngIf="viewType === 'list'">
-  <home-list-view></home-list-view>
-</div>
-
-<div *ngIf="viewType === 'tile'">
-  <home-tile-view></home-tile-view>
-</div>
+<home-view-button></home-view-button>

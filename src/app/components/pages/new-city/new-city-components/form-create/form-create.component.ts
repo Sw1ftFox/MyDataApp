@@ -1,34 +1,42 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { City } from '../../../../../cities';
+
+import { CityService } from '../../../../../services/city.service';
 
 @Component({
   selector: 'city-form-create',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [FormsModule],
   templateUrl: './form-create.component.html',
   styleUrl: './form-create.component.scss'
 })
-export class FormCreateComponent {
-  @Input() cities!: City[];
-  @Output() saveCities = new EventEmitter();
+export class FormCreateComponent implements OnInit {
+  cities: City[] = [];
 
-  name = new FormControl('');
-  description = new FormControl('');
-  image = new FormControl('');
+  constructor(private cityService: CityService) { }
+
+  ngOnInit(): void {
+    this.cities = this.cityService.getCities();
+  }
+
+  name = '';
+  description = '';
+  image = '';
 
   onSubmit(): void {
     const newCity: City = {
       id: this.cities.length + 1,
-      name: this.name.value ?? '',
-      description: this.description.value ?? '',
-      image: this.image.value ?? '',
+      name: this.name,
+      description: this.description,
+      image: this.image,
       favorite: false
     };
 
-    this.cities.push(newCity);
+    this.cityService.addCity(newCity);
 
-    this.saveCities.emit();
+    this.name = '';
+    this.description= '';
+    this.image= '';
   }
 }

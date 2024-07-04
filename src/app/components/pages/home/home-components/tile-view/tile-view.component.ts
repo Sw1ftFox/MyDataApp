@@ -1,29 +1,23 @@
-import { Component } from '@angular/core';
-import { NgIf } from '@angular/common';
-import { CITIES, City } from '../../../../../cities';
+import { Component, OnInit } from '@angular/core';
+import { NgIf, NgFor } from '@angular/common';
+import { City } from '../../../../../cities';
 import { FavoriteIconComponent } from "../../../../shared-components/favorite-icon/favorite-icon.component";
+
+import { CityService } from '../../../../../services/city.service';
 
 @Component({
   selector: 'home-tile-view',
   standalone: true,
   templateUrl: './tile-view.component.html',
   styleUrl: './tile-view.component.scss',
-  imports: [NgIf, FavoriteIconComponent]
+  imports: [NgIf, NgFor, FavoriteIconComponent]
 })
-export class TileViewComponent {
-  cities = this.loadCities();
+export class TileViewComponent implements OnInit {
+  cities: City[] = [];
 
-  private loadCities(): City[] {
-    const citiesFromStorage = localStorage.getItem('cities');
+  constructor(private cityService: CityService) { }
 
-    if (citiesFromStorage) {
-      return JSON.parse(citiesFromStorage);
-    } else {
-      return CITIES;
-    }
-  }
-
-  saveCities(): void {
-    localStorage.setItem('cities', JSON.stringify(this.cities));
+  ngOnInit(): void {
+    this.cities = this.cityService.getCities();
   }
 }
