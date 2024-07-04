@@ -1,28 +1,24 @@
-import { Component } from '@angular/core';
-import { CITIES, City } from '../../../../../cities';
+import { Component, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { City } from '../../../../../cities';
 import { FavoriteIconComponent } from "../../../../shared-components/favorite-icon/favorite-icon.component";
+
+import { CityService } from '../../../../../services/city.service';
 
 @Component({
   selector: 'home-list-view',
   standalone: true,
   templateUrl: './list-view.component.html',
   styleUrl: './list-view.component.scss',
-  imports: [FavoriteIconComponent]
+  imports: [NgFor, FavoriteIconComponent]
 })
-export class ListViewComponent {
-  cities = this.loadCities();
+export class ListViewComponent implements OnInit {
+  cities: City[] = [];
 
-  private loadCities(): City[] {
-    const citiesFromStorage = localStorage.getItem('cities');
-    if (citiesFromStorage) {
-      return JSON.parse(citiesFromStorage);
-    } else {
-      return CITIES;
-    }
-  }
+  constructor(private cityService: CityService) { }
 
-  saveCities(): void {
-    localStorage.setItem('cities', JSON.stringify(this.cities));
+  ngOnInit(): void {
+    this.cities = this.cityService.getCities();
   }
 }
 

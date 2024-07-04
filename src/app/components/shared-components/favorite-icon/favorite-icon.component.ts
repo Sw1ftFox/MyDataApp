@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { City } from '../../../cities';
+
+import { CityService } from '../../../services/city.service';
 
 @Component({
   selector: 'home-favorite-icon',
@@ -11,10 +13,10 @@ import { City } from '../../../cities';
 })
 export class FavoriteIconComponent {
   @Input() city!: City;
-  @Output() saveCities = new EventEmitter();
+
+  constructor(private cityService: CityService) { }
 
   toggleFavorite(): void {
-    this.city.favorite = !this.city.favorite;
-    this.saveCities.emit();
+    this.cityService.toggleFavorite(this.city);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -9,10 +9,4 @@ import { RouterModule } from '@angular/router';
   styleUrl: './view-button.component.scss'
 })
 export class ViewButtonComponent {
-  @Input() viewType: 'list' | 'tile' = 'list';
-  @Output() viewTypeChange = new EventEmitter<'list' | 'tile'>();
-
-  changeViewType(type: 'list' | 'tile') {
-    this.viewTypeChange.emit(type);
-  }
 }

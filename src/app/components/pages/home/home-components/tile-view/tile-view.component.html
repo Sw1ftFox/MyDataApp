@@ -1,14 +1,14 @@
 <div class="tile">
-  @for (city of cities; track $index) {
-  <div class="tile__content">
-    <img src="{{city.image}}" class="tile__image" alt="{{city.name}} фото">
-    <div class="tile__text">
-      <div class="tile__title">
-        <div class="tile__name">{{city.name}}</div>
-        <home-favorite-icon [city]="city" (saveCities)="saveCities()"></home-favorite-icon>
+  <ng-container *ngFor="let city of cities;">
+    <div class="tile__content">
+      <img [src]="city.image" class="tile__image" [alt]="city.name + ' фото'">
+      <div class="tile__text">
+        <div class="tile__title">
+          <div class="tile__name">{{city.name}}</div>
+          <home-favorite-icon [city]="city"></home-favorite-icon>
+        </div>
+        <div class="tile__description">{{city.description}}</div>
       </div>
-      <div class="tile__description">{{city.description}}</div>
     </div>
-  </div>
-  }
+  </ng-container>
 </div>
